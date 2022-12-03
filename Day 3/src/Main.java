@@ -24,9 +24,6 @@ public class Main {
         System.out.printf("Sum of priority of each backpacks shared items: %d.%n", totalSharedPriority.get());
         
         // part 2
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        alphabet       += alphabet.toUpperCase();
-
         Map<Character, Integer> groupsPerCharacter = new HashMap<>();
 
         List<Backpack> backpacksToCheck = new ArrayList<>();
