@@ -8,7 +8,6 @@ public class Backpack {
     private String allBackpackItems;
     private List<Character> firstCompartment;
     private List<Character> secondCompartment;
-    private Character       groupBadge;
 
     public Backpack(String line) {
         allBackpackItems  = line;
