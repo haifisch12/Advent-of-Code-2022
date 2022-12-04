@@ -19,7 +19,7 @@ public class Main {
         counter.set(0);
 
         pairs.forEach(p -> {
-            if (p.doAssignmentsOverall()) counter.addAndGet(1);
+            if (p.doAssignmentsOverlap()) counter.addAndGet(1);
         });
 
         System.out.println("Assignment pairs where ranges overlap: " + counter);

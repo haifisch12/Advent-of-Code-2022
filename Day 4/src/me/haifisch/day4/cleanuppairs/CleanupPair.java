@@ -33,7 +33,7 @@ public class CleanupPair {
         return firstElfAssignments.containsAll(secondElfAssignments) || secondElfAssignments.containsAll(firstElfAssignments);
     }
 
-    public boolean doAssignmentsOverall() {
+    public boolean doAssignmentsOverlap() {
         for (int number: firstElfAssignments) {
             if (secondElfAssignments.contains(number))
                 return true;
