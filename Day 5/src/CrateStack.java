@@ -36,7 +36,7 @@ public class CrateStack {
     // gets and removes from top
     public String takeStackTop() {
         String item = getStackTop();
-        //crates.remove(item);  <---- wrong. fuck reference, takes the first occurrence. >:(
+        //crates.remove(item);  <--- wrong. fuck reference, takes the first occurrence. >:(
         crates.remove(crates.size() - 1); // <--- right
 
         return item;
