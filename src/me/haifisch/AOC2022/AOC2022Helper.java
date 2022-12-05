@@ -12,15 +12,19 @@ import java.util.function.Function;
 public final class AOC2022Helper<T> {
     public AOC2022Helper() { }
 
-    public static Path getDataPathForCurrentDay(int currentDay) {
-        return Path.of(Paths.get("").toAbsolutePath() + String.format("\\assets\\data_day%d.txt", currentDay));
+    public static Path getDataPath(String filename) {
+        return Path.of(Paths.get("").toAbsolutePath() + "\\assets\\" + filename);
     }
 
     public List<T> getDataForCurrentDay(int currentDay, Function<String, T> myFunc) {
+        return getDataForCurrentDay(String.format("data_day%d.txt", currentDay), myFunc);
+    }
+
+    public List<T> getDataForCurrentDay(String fileName, Function<String, T> myFunc) {
         List<T> result = new ArrayList<>();
 
         try {
-            Files.lines(getDataPathForCurrentDay(currentDay)).forEach(l -> {
+            Files.lines(getDataPath(fileName)).forEach(l -> {
                 result.add(myFunc.apply(l));
             });
         } catch (IOException e) {
