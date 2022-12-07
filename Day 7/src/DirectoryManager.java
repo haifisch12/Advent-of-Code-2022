@@ -60,14 +60,13 @@ public class DirectoryManager {
                 currentDirectory = currentDirectory.getParent();
             }
             else {
-                // don't need .ifPresent() because the input will always be correct... hopefully :)
                 Optional<Directory> subDir = currentDirectory.getDirectories().stream().filter(d -> d.getName().equals(splitCommand[2])).findFirst();
 
                 if (subDir.isPresent()) {
                     currentDirectory = subDir.get();
                 }
                 else {
-                    var myException = new RuntimeException("Test");
+                    var myException = new RuntimeException("Directories angy. >:(");
                     myException.printStackTrace();
                     throw myException;
                 }
