@@ -1,3 +1,6 @@
+import me.haifisch.AOC2022.AOC2022Console;
+import me.haifisch.AOC2022.ConsoleColors;
+
 import java.util.Map;
 
 public class CPU {
@@ -32,12 +35,15 @@ public class CPU {
     }
 
     private void drawCRTPixel(int x) {
-        int  cycle  = currentCycle % CRT_WIDTH;
-        char symbol = '.';
+        ConsoleColors color = ConsoleColors.Black;
+        int  cycle          = currentCycle % CRT_WIDTH;
+        char symbol         = '.';
 
-        if (x == cycle || x == cycle - 1 || x == cycle - 2)
+        if (x == cycle || x == cycle - 1 || x == cycle - 2) {
             symbol = '#';
+            color  = ConsoleColors.Yellow;
+        }
 
-        System.out.print(symbol);
+        AOC2022Console.printColor(String.valueOf(symbol), color);
     }
 }
